@@ -1,0 +1,27 @@
+Proyecto Videojuegos
+
+Descripcion:
+El sistema sera una tienda de videojuegos los cuales se pueden organizar por varias caracteristicas,
+el sistema tendra dos usuarios: un administrador y un cliente, 
+el administrador sera el que agregue modifique y/o elimine informacion del sistema,
+el cliente solo podra ver los productos y llevar a cabo la compra de ellos (compra simulada),
+
+
+Funciones del sistema:
+*Agregar, eliminar y actualizar la informacion de los videojuegos
+*Organizar los videojuegos por categoria, precio, etc.
+*Mostrar videojuegos
+*Mostrar ofertas de videojuegos
+*Mostrar los videojuegos mas vendidos
+
+Caracteristicas de un videojuego:
+*Titulo
+*Descripcion
+*Clasificacion
+*Calificacion
+*Tipo
+*Imagen (caratula)
+*Precio
+*Compañia desarrolladora
+*Consolas en las que esta disponible
+
