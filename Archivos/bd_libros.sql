@@ -19,7 +19,6 @@ CREATE TABLE libro (
 );
 
 
-
 CREATE TABLE genero (
   id_genero int(2) NOT NULL,
   genero varchar(15) NOT NULL
@@ -30,6 +29,6 @@ ALTER TABLE genero ADD PRIMARY KEY (id_genero);
 ALTER TABLE libro ADD FOREIGN KEY (genero) REFERENCES genero(id_genero);
 
 
-INSERT INTO editorial (id_editorial, nombre) VALUES (1,'salamanca');
+INSERT INTO editorial (nombre) VALUES ('salamanca');
 INSERT INTO genero (id_genero, genero) VALUES (1,'fantasia');
 INSERT INTO libro (titulo, genero, editorial) VALUES ('harry', 1, 1);
