@@ -1,0 +1,60 @@
+//forma 1
+<?php
+		while ($row = $result->fetch_array(MYSQLI_ASSOC)) {
+	?>
+		<li><?php echo $row["nombre"]?></li>
+	<?php
+		}
+		$db->close();
+	?>
+
+//forma 2
+	<?php
+		while ($row = $result->fetch_array(MYSQLI_ASSOC)) {
+			echo '<li>'.$row["nombre"].'<li>';
+		}
+		$db->close();
+	?>
+//forma 3
+<?php  while ($row = $result->fetch_array(MYSQLI_ASSOC)):?>
+		<li><?php echo $row['nombre'].' - '.$row['autor']; ?></li>
+<?php endwhile; 
+	$db->close();
+?>
+
+
+<?php
+	$db = mysqli_connect("127.0.0.1", "lector", "lector123", "libreria");
+	$sql = "SELECT * FROM libros ORDER BY nombre";
+	$result = $db->query($sql);
+?>
+<!DOCTYPE html>
+<html>
+<body>
+<h1>Lista de libros</h1>
+<ul>
+	<!-- Forma 1
+	<?php
+		while ($row = $result->fetch_array(MYSQLI_ASSOC)) {
+	?>
+		<li><?php echo $row["nombre"]?></li>
+	<?php
+		}
+		$db->close();
+	?> -->
+	<!-- Forma 2
+	<?php
+		while ($row = $result->fetch_array(MYSQLI_ASSOC)) {
+			echo '<li>'.$row["nombre"].'<li>';
+		}
+		$db->close();
+	?> -->
+	<!-- Forma 3 -->
+	<?php  while ($row = $result->fetch_array(MYSQLI_ASSOC)):?>
+		<li><?php echo $row['nombre'].' - '.$row['autor']; ?></li>
+	<?php endwhile;
+		$db->close();
+	?>
+</ul>
+</body>
+</html>
