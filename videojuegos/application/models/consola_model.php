@@ -25,48 +25,36 @@
 			//return $query->result_array()[0]['nombre'];
 
 			if (count($query->result_array()) > 0) {
-				return $query->result_array()[0]['nombre'];
+				//return $query->result_array()[0]['nombre'];
+				return $query->result_array()[0];
 			}
 
 		}
 
-		/*
-		public function get_extensiones_publicas()
-		{
-			$this->db->select("CONCAT(extension, ' : ', descripcion) as extension", false);
-			$query = $this->db->get('dir_extensiones');
 
-			return $query->result_array();
+		public function add_consola($data)
+		{
+			$this->db->insert('consola', $data);
 		}
 
-		public function get_extension($id)
-		{
-			//$query = $this->db->query("SELECT extension, descripcion, id_piso FROM dir_extensiones WHERE id=$id");
-			$this->db->select('extension, descripcion, id_piso, jefe, secretarias');
+		public function update_consola($id, $data) {
 			$this->db->where('id', $id);
-			$query = $this->db->get('dir_extensiones');
-
-			return $query->result_array();
+			$this->db->update('consola', $data);
 		}
 
-
-		public function add_extension($data)
+		public function delete_consola($id)
 		{
-			$this->db->insert('dir_extensiones', $data);
-		}
-
-		public function update_extension($id, $data) {
 			$this->db->where('id', $id);
-			$this->db->update('dir_extensiones', $data);
+			$this->db->delete('consola');
 		}
 
-		public function delete_extensiones($ids)
+		public function delete_consolas($ids)
 		{
 			foreach ($ids as $id) {
 				$this->db->where('id', $id);
-				$this->db->delete('dir_extensiones');
+				$this->db->delete('consola');
 			}
 		}
-		*/
+		
 	}
 ?>

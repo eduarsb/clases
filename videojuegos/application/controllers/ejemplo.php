@@ -1,14 +1,13 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 
-class Welcome extends CI_Controller {
+class Ejemplo extends CI_Controller {
 	function __construct()
 	{
 		parent::__construct();
 
 		//$this->load->library('form_validation');
 		$this->load->model('consola_model');
-		$this->load->model('videojuego_model');
 
 	}
 
@@ -16,9 +15,9 @@ class Welcome extends CI_Controller {
 	{
 		
 		//$consolas = $this->consola_model->get_consolas();
-		//$consolas = $this->consola_model->get_consola(3);
+		$consolas = $this->consola_model->get_consola(3);
 		//$consolas = $this->consola_model->get_consola(3)[0];
-		//print_r($consolas);
+		print_r($consolas);
 		echo "<br>";
 
 		//print_r($consolas[0]);
@@ -29,23 +28,26 @@ class Welcome extends CI_Controller {
 		//echo $ejemplo['nombre'];
 
 		//$consolas = $consolas[0];
-		//echo $consolas;
-
-
+		echo $consolas;
 		//echo $consolas['nombre'];
 
 		//$this->load->view('welcome_message');
+	}
 
-
-		$vd = $this->videojuego_model->get_videojuegos();
-		print_r($vd);
-
+	public function argumento_requerido($arg)
+	{
+		echo "Ejemplo de una funcion con argumento requerido <br>";
+		echo $arg;
 
 	}
 
-	public function ejemplo()
+	public function argumento_default($arg = 'default')
 	{
-		echo "ejemplo de una funcion";
+		echo "Ejemplo de una funcion con argumento que puede ser omitido <br>";
+		echo "Si es omitido toma el valor por defecto que se declara en la funcion ('default') <br>";
+		echo "Si es no es omitido toma el valor con el que se envia <br>";
+		echo $arg;
+
 	}
 }
 
