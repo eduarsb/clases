@@ -9,10 +9,25 @@
 
 		public function get_videojuegos()
 		{
-			$this->db->select('id, titulo, descripcion, clasificacion, nombre, imagen, precio');
+			$this->db->select('videojuego.id, titulo, descripcion, clasificacion, nombre, imagen, precio');
 			$this->db->from('videojuego');
-			$this->db->join('tipo', 'id_tipo= id', 'left');
+			$this->db->join('tipo', 'id_tipo= tipo.id');
 			$query = $this->db->get();
+
+			$videojuegos = $query->result_array();
+			$vdjs = $query->result();
+
+			/*
+			print_r($videojuegos[0]);
+			echo "<br><br><br>";
+			print_r($vdjs[0]);
+
+			echo "<br><br><br>";
+			echo $vdjs[0]->titulo;
+			*/
+
+			return $videojuegos;
+
 		}
 
 		public function get_videojuego($id)

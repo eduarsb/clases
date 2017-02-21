@@ -19,7 +19,7 @@
 					echo $row['genero'];
 					echo "</option>";
 
-					echo "<option>".$row['genero']."</option>";
+					//echo "<option>".$row['genero']."</option>";
 				}
 
 			?>

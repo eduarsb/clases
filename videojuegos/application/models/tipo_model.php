@@ -9,11 +9,15 @@
 
 		public function get_tipos()
 		{
-			$query = $this->db->query("select id, nombre from consola");
+			//$query = $this->db->query("select id, nombre from consola");
+			$this->db->select('id, nombre');
+			$this->db->from('tipo');
+			$this->db->limit(10);
+			$this->db->order_by('id','asc'); // desc
 			return $query->result_array();
 		}
 
-		public function get_tipo($id)
+		public function get_tipo($id, $nombre)
 		{
 
 			$this->db->select('id, nombre');
@@ -33,6 +37,17 @@
 		{
 			$this->db->insert('tipo', $data);
 			$flag = ($this->db->affected_rows() > 0) ? true : false ;
+
+			/*
+			$retVal = (condition) ? a : b ;
+
+			if (condition) {
+				$retVal = a;
+			} else {
+				$retVal = b;
+			}
+			*/			
+
 			return $flag;
 		}
 

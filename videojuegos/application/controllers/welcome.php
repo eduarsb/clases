@@ -19,7 +19,7 @@ class Welcome extends CI_Controller {
 		//$consolas = $this->consola_model->get_consola(3);
 		//$consolas = $this->consola_model->get_consola(3)[0];
 		//print_r($consolas);
-		echo "<br>";
+		echo "index welcome<br>";
 
 		//print_r($consolas[0]);
 		//echo "<br>";
