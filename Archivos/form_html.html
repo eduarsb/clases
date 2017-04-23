@@ -1,10 +1,84 @@
 <html>
+<link rel="stylesheet" type="text/css" href="ejemplo.css">
+
+
+<style type="text/css">
+	input, label {
+		background-color: #FF0000;
+		/*background-color: #F00;*/
+	}
+	/*
+	div .bg-yellow {
+		background-color: yellow;
+	}
+*/
+	.div {
+		background-color: yellow;
+		width: 60%;
+		float: left;
+	}
+
+	.div2 p {
+		width: 50%;
+		background-color:blue;
+	}
+
+	.clase ol:nt
+
+
+	.bg-azul {
+		background-color: blue;
+	}
+
+	#bg-pink {
+		background-color: pink;
+	}
+
+	.clear {
+		clear: both;
+	}
+
+</style>
+
 <head>
 	<title>Formulario</title>
 </head>
 <body>
+	<div class="div">
+		<div class="div2">
+			<p>ejemplo</p>
+			<p>mlskljo</p>
+			<label>sdfhjks</label>
+		</div>
+
+		<p>sfnsdsf</p>
+		
+	</div>
+
+	<div id="div">
+		<p >ejemplo</p>
+		<p>mlskljo</p>
+	</div>
+
+	<div class="clear"></div>
+	
+	<form class="bg-azul" method="post" action="insertar.php">
+		<label id="bg-pink" for="titulo">Titulo</label>
+		<input type="text" name="titulo">
+		<label>Genero</label>	
+		<?php echo "hola"; ?>
+		<select>
+
+			<option>Genero 1</option>
+			<option>Genero 2</option>
+			<option>Genero 3</option>
+			<option>Genero 4</option>
+		</select>
+		<input type="submit" value="enviar"/>
+	</form>
+	<br>
 	<form method="post" action="insertar.php">
-		<label for="titulo">Titulo</label>
+		<label id="bg-pink" for="titulo">Titulo</label>
 		<input type="text" name="titulo">
 		<label >Genero</label>	
 		<?php echo "hola"; ?>
