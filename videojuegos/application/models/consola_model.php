@@ -55,6 +55,8 @@
 				$this->db->delete('consola');
 			}
 		}
+
+		
 		
 	}
 ?>

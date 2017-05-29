@@ -9,7 +9,7 @@
 
 </head>
 <body class="container">
-	<?php $this->load->view('navbar'); ?>
+	<?php echo menu(); ?>
 
 	<div class="row">
 		<div class="col-md-12">

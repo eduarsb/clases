@@ -12,11 +12,7 @@
 	?>
 	
 
-	<div class="row">
-		<div class="col-md-12">
-			<h1>Emplo de vista</h1>
-		</div>
-	</div>
+	
 	lorem
 
 
