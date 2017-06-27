@@ -37,6 +37,8 @@ class Inicio2 extends CI_Controller {
 				'empresa' => $this->input->post('empresa')
 				);
 			$this->consola_model->add_consola($data);
+			$this->load->view('ejemplos2/inicio');
+
 		}else{
 			echo "no se agrego";
 			$this->load->view('ejemplos2/agregar');
@@ -44,13 +46,44 @@ class Inicio2 extends CI_Controller {
 		
 	}
 
+	public function agregar_ajax()
+	{
+		$this->form_validation->set_rules('nombre', 'Nombre', 'required');
+		$this->form_validation->set_rules('empresa', 'NombreCampo', 'required');
+		if ($this->form_validation->run() == TRUE) {
+			$data = array(
+				'nombre' => $this->input->post('nombre'),
+				'empresa' => $this->input->post('empresa')
+				);
+			$this->consola_model->add_consola($data);
+			echo true;
+
+		}else{
+			echo false;
+		}
+	}
+
 	public function editar($id)
 	{
 		
+		
+
+		$data = array(
+				'nombre' => $this->input->post('nombre'),
+				'empresa' => $this->input->post('empresa')
+				);
+		print_r($data);
+		if (!empty($this->input->post('nombre')) && !empty($this->input->post('empresa'))) { 
+			$this->consola_model->update_consola($id, $data);
+		}else{
+			print_r("Error!!!");
+		}
+
 		$resultado =$this->consola_model->get_consola($id);
 
-		//print_r($resultado);
+		print_r($resultado);
 		$this->load->view('ejemplos2/agregar',$resultado);
+		
 	}
 
 	public function ejemplo()
@@ -69,6 +102,8 @@ class Inicio2 extends CI_Controller {
 
 		print_r($_POST['nombre']);
 	}
+
+
 
 
 }
